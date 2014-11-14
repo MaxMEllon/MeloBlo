@@ -4,5 +4,6 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    @articles = Article.all
   end
 end
