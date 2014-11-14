@@ -5,9 +5,9 @@
   - @articles.each do |article|
     .panel.panel-default#show_article
       .panel
-        p.h3 = article.title
+        p.h1 = article.title
           span.small = aricle.good
             | いいね
-      .panel-body
-        p = article.content
+      .panel-body#markdown
+        = markdown(article.content)
 = render layout: 'rightbar' do

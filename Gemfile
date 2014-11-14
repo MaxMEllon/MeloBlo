@@ -61,6 +61,9 @@ gem 'hirb-unicode'
 # jquery-datatables-rails
 gem 'jquery-datatables-rails'
 
+# redcarpet # markdown support
+gem 'redcarpet'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
