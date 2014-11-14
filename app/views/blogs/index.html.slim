@@ -1,32 +1,4 @@
-.container
-  .row
-    .col-sm-2
-      .panel.panel-default#index
-        .panel.heading
-          div style="text-align:center;"
-            = image_tag 'UserDefaltImage.png', size: '120x120', class: 'img-thumbnail'
-        .panel-body
-          div style="text-align:center;"
-            | ユーザー名
-      .panel.panel-default#index
-        .panel.heading
-          .text-muted ユーザーデータ
-        .panel-body
-          | 投稿記事数 ：
-      .panel.panel-default#index
-        .panel.heading
-          .text-muted ユーザータグ
-        .panel-body
-          li#index_tag_list= link_to "タグ1", "#"
-          li#index_tag_list= link_to "タグ1", "#"
-          li#index_tag_list= link_to "タグ1", "#"
-    .col-sm-6
-    .col-sm-3
-      .well.sidebar-nav
-        h3 Sidebar
-        ul.nav.nav-list
-          li.nav-header Sidebar
-          li= link_to "Link 1", "#"
-          li= link_to "Link 2", "#"
-          li= link_to "Link 3", "#"
-
+= render layout: 'leftbar' do
+.col-sm-6
+  h1 hogehoge
+= render layout: 'rightbar' do

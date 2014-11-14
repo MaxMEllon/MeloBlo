@@ -43,8 +43,10 @@ html lang="en"
                   li= link_to "ブログ設定", "#"
                   hr
                   li= link_to "ログアウト", "#"
-    = bootstrap_flash
-    = yield
+    .row
+      .container
+        = bootstrap_flash
+        = yield
     .col-md-8
     footer
       p &copy; Company 2014
