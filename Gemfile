@@ -64,6 +64,9 @@ gem 'jquery-datatables-rails'
 # redcarpet # markdown support
 gem 'redcarpet'
 
+# coderay
+gem 'coderay'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
