@@ -27,15 +27,33 @@
 //
 // Example:
 // @linkColor: #ff0000;
+//
+
+// panel {{{
+.panel {
+  margin-bottom: 15px;
+}
 .panel#index {
   .panel-body {
     position: relative;
     top: -10px;
   }
 }
+.panel#show_article {
+  .panel {
+    .h1 {
+      position: relative;
+      top: 2px;
+      left: 12px;
+    }
+  }
+}
+// }}}
 
+// li {{{
 li#index_tag_list {
   position: relative;
   top: 2px;
   left: 5px;
 }
+// }}}
