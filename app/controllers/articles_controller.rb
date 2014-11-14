@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to blogs_path
     else
-
+      render "new"
     end
   end
 
