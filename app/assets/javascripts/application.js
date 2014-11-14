@@ -13,6 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require twitter/bootstrap/rails/confirm
 //= require turbolinks
 //= require dataTables/jquery.dataTables
 //= require_tree .
+
+// twitter-bootstrap-rails-confirm
+$(document).ready(function() {
+  $.fn.twitter_bootstrap_confirmbox.defaults = {
+    title: "&nbsp;",
+    cancel: "キャンセル",
+    proceed: "OK",
+    proceed_class: "btn proceed btn-info"
+  };
+});
