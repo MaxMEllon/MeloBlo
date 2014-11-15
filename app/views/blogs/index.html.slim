@@ -1,13 +1,38 @@
 = render layout: 'leftbar' do
-.col-sm-6
-  h1 記事一覧
-  hr
-  - @articles.each do |article|
-    .panel.panel-default#show_article
-      .panel
-        p.h1 = article.title
-          span.small = aricle.good
-            | いいね
-      .panel-body#markdown
-        = markdown(article.content)
+.col-xs-8
+  p.h1
+    | 最新の記事
+  hr.default
+    .panel.panel-success#article
+      .panel-heading#category
+        li カテゴリー1
+    table.table.table-bordered#article
+      tbody
+        - cnt = 0
+        - @articles.each do |article|
+          - if cnt % 2 == 0
+            tr
+          - cnt += 1
+          td.col-md-4
+            .panel.panel-default#article
+              .panel-heading#blog
+                p.h4 = article.title
+              .panel-body#article-title
+                = markdown(article.content)
+    .panel.panel-success#article
+      .panel-heading#category
+        li カテゴリー2
+    table.table.table-bordered#article
+      tbody
+        - cnt = 0
+        - @articles.each do |article|
+          - if cnt % 2 == 0
+            tr
+          - cnt += 1
+          td.col-md-4
+            .panel.panel-default#article
+              .panel-heading#blog
+                p.h4 = article.title
+              .panel-body#article-title
+                = markdown(article.content)
 = render layout: 'rightbar' do
