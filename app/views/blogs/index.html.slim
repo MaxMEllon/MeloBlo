@@ -14,11 +14,11 @@
             tr
           - cnt += 1
           td.col-md-4
-           .panel.panel-default#article
-             .panel-heading#blog
-               p.h4 = article.title
-             .panel-body#article-title
-               = markdown(article.content)
+            .panel.panel-default#article
+              .panel-heading#blog
+                p.h4 = article.title
+              .panel-body#article-title
+                = markdown(article.content)
     .panel.panel-success#article
       .panel-heading#category
         li カテゴリー2
@@ -30,9 +30,9 @@
             tr
           - cnt += 1
           td.col-md-4
-           .panel.panel-default#article
-             .panel-heading#blog
-               p.h4 = article.title
-             .panel-body#article-title
-               = markdown(article.content)
+            .panel.panel-default#article
+              .panel-heading#blog
+                p.h4 = article.title
+              .panel-body#article-title
+                = markdown(article.content)
 = render layout: 'rightbar' do
