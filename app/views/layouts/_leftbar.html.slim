@@ -1,21 +1,23 @@
 .col-xs-2#leftbar
-  .panel.panel-default#index
-    .panel.heading
+  .panel.panel-default#frame
+    .panel
       div style="text-align:center;"
         = image_tag 'UserDefaltImage.png', size: '120x120', class: 'img-responsive img-thumbnail'
     .panel-body
       div style="text-align:center;"
         | ユーザー名
-  .panel.panel-default#index
-    .panel
-      .text-muted ユーザーデータ
+  .panel.panel-default#frame
+    .panel.panel-info
+      .text-muted.panel-heading ユーザーデータ
     .panel-body
       | 投稿記事数 ：
-  .panel.panel-default#index
-    .panel
-      .text-muted ユーザータグ
+  .panel.panel-default#frame
+    .panel.panel-warning
+      .text-muted.panel-heading ユーザータグ
     .panel-body
-      li#index_tag_list= link_to "タグ1", "#"
-      li#index_tag_list= link_to "タグ1", "#"
-      li#index_tag_list= link_to "タグ1", "#"
-
+      li#tag= link_to "タグ1", "#"
+      li#tag= link_to "タグ1", "#"
+      li#tag= link_to "タグ1", "#"
+  a href="/" target="_blank"
+    div#banner
+      img src="http://yuzu-soft-works.sakura.ne.jp/home/img/amairo/amabana_160_720_a.jpg" art="ゆずソフト最新作天色＊アイルノーツ"
