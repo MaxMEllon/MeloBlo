@@ -1,3 +1,4 @@
+// import {{{
 @import "twitter/bootstrap/bootstrap";
 
 // Set the correct sprite paths
@@ -13,25 +14,80 @@
 
 // Font Awesome
 @import "fontawesome/font-awesome";
+// }}}
 
-// Glyphicons
-//@import "twitter/bootstrap/sprites.less";
-
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
-//
+// navbar {{{
+.navbar {
+  height: 34px;
+  min-height: 15px;
+  border-radius: 0;
+  // normal {{{
+  li {
+    a {
+      // paddibg [上下左右]
+      // paddibg [上下][左右]
+      // paddibg [上][左右][下]
+      // paddibg [上][下][左][右]
+      padding: 7px 10px 3px ;
+    }
+  }
+  // }}}
+  // child {{{
+  li#child {
+    a {
+        text-align: center;
+        border-left:  1px solid rgba(255, 255, 255, .75);
+        border-right: 1px solid rgba(  0,   0,   0, .1);
+    }
+    a:focus {
+      border-bottom: 3px solid rgba(200, 20, 20, .1)
+    }
+    a:hover {
+      border-bottom: 3px solid rgba(200, 20, 20, .5)
+    }
+  }
+  // }}}
+  // navbar-right {{{
+  .navbar-right {
+    li#last-child {
+      a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+      a:focus {
+        border-bottom: 3px solid rgba(200, 20, 20, .1)
+      }
+      a:hover {
+        border-bottom: 3px solid rgba(200, 20, 20, .5)
+      }
+    }
+    // dropdown-menu {{{
+    .dropdown-menu {
+      li#dropdown-menu {
+        a:focus {
+          border-bottom: 0px
+        }
+        a:hover {
+          border-bottom: 0px
+        }
+      }
+    }
+    // }}}
+  }
+  // }}}
+}
+// }}}
 
 // panel {{{
 .panel {
   margin-bottom: 15px;
+  .panel-body {
+    li#index_tag_list {
+      position: relative;
+      top: 2px;
+      left: 5px;
+    }
+  }
 }
 .panel#index {
   .panel-body {
@@ -50,10 +106,3 @@
 }
 // }}}
 
-// li {{{
-li#index_tag_list {
-  position: relative;
-  top: 2px;
-  left: 5px;
-}
-// }}}

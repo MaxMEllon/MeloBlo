@@ -29,24 +29,22 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-            span.icon-bar
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
-            span.glyphicon.glyphicon-hand-down
-            li= link_to "トップ", blogs_path
-            li= link_to "ブログ一覧", ""
-            li= link_to "記事作成", new_article_path
-            li= link_to "カテゴリ作成", ""
+            li#child= link_to "トップ", blogs_path
+            li#child= link_to "ブログ一覧", ""
+            li#child= link_to "記事作成", new_article_path
+            li#child= link_to "カテゴリ作成", ""
           ul.nav.navbar-nav.navbar-right
-            li.dropdown
+            li.dropdown#last-child
               a.dropdown-toggle data-toggle="dropdown" href="#"
                 | メニュー
                 span.caret
-                ul.dropdown-menu
-                  li= link_to "ユーザー設定", "#"
-                  li= link_to "ブログ設定", "#"
-                  hr
-                  li= link_to "ログアウト", "#"
+              ul.dropdown-menu role="menu"
+                li#dropdown-menu= link_to "ユーザー設定", "#"
+                li#dropdown-menu= link_to "ブログ設定", "#"
+                li.divider
+                li#dropdown-menu= link_to "ログアウト", "#"
     .row
       .container
         = bootstrap_flash
