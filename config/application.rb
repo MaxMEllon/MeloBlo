@@ -11,5 +11,6 @@ module MeloBlo
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ja
     config.generators.template_engine = :slim
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 end
