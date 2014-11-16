@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
 
-  # before_action :authenticate_user!, only: [] # 閲覧制限
+  before_action :authenticate_user!, only: [:new] # 閲覧制限
   def new
     @blog = Blog.new
   end
