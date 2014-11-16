@@ -32,6 +32,7 @@ html lang="en"
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
             li#child= link_to "トップ", blogs_path
+            li#child= link_to "マイブログ", ""
             li#child= link_to "ブログ一覧", ""
             li#child= link_to "記事作成", new_article_path
             li#child= link_to "カテゴリ作成", ""
@@ -54,18 +55,19 @@ html lang="en"
       .div#innner
         .col-xs-2
         .col-xs-2
+          h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
         .col-xs-2
+          h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
         .col-xs-2
+          h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
     .row
-      .div#innner
-        .col-xs-2
-          p &copy; Company 2014
+      p#copy-write &copy; Company 2014
