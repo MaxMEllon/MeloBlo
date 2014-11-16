@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
   has_one :blog
   validates_uniqueness_of :name
   validates_uniqueness_of :name
-  validates_presence_of   :email
-  validates_presence_of   :email
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -18,11 +16,9 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
-
   def email_required?
     false
   end
-
   def email_changed?
     false
   end
