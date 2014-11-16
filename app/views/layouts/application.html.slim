@@ -27,24 +27,33 @@ html lang="en"
           button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
             span.icon-bar
             span.icon-bar
-            span.icon-bar
-            span.icon-bar
+            - if user_signed_in?
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
             li#child= link_to "トップ", blogs_path
             li#child= link_to "ブログ一覧", ""
-            li#child= link_to "記事作成", new_article_path
-            li#child= link_to "カテゴリ作成", ""
+            - if user_signed_in?
+              li#child= link_to "マイブログ", ""
+              li#child= link_to "記事作成", new_article_path
+              li#child= link_to "カテゴリ作成", ""
           ul.nav.navbar-nav.navbar-right
-            li.dropdown#last-child
-              a.dropdown-toggle data-toggle="dropdown" href="#"
-                | メニュー
-                span.caret
-              ul.dropdown-menu role="menu"
-                li#dropdown-menu= link_to "ユーザー設定", "#"
-                li#dropdown-menu= link_to "ブログ設定", "#"
-                li.divider
-                li#dropdown-menu= link_to "ログアウト", "#"
+            - if user_signed_in?
+              - user = user_session
+              li= user
+              li.dropdown#last-child
+                a.dropdown-toggle data-toggle="dropdown" href="#"
+                  | メニュー
+                  span.caret
+                ul.dropdown-menu role="menu"
+                  li#dropdown-menu= link_to "ユーザー設定", "#"
+                  li#dropdown-menu= link_to "ブログ設定", "#"
+                  li.divider
+                  li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
+            - else
+              li#last-child= link_to "ログイン", user_session_path
     .row
       .container
         = bootstrap_flash
@@ -54,18 +63,19 @@ html lang="en"
       .div#innner
         .col-xs-2
         .col-xs-2
+          h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
         .col-xs-2
+          h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
         .col-xs-2
+          h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
     .row
-      .div#innner
-        .col-xs-2
-          p &copy; Company 2014
+      p#copy-write &copy; Company 2014
