@@ -6,6 +6,10 @@ h2
     br
     = f.text_field :name, autofocus: true
   .field
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true
+  .field
     = f.label :password
     br
     = f.password_field :password, autocomplete: "off"
