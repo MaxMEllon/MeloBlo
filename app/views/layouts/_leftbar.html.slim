@@ -5,7 +5,9 @@
         = image_tag 'UserDefaltImage.png', size: '120x120', class: 'img-responsive img-thumbnail'
     .panel-body
       div style="text-align:center;"
-        | ユーザー名
+        - if user_signed_in?
+          | ユーザー名
+          br= current_user.name
   .panel.panel-default#frame
     .panel.panel-info
       .text-muted.panel-heading#user-data ユーザーデータ

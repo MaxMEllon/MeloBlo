@@ -41,8 +41,7 @@ html lang="en"
               li#child= link_to "カテゴリ作成", ""
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
-              - user = user_session
-              li= user
+              li#name= "ようこそ " + current_user.name + " さん"
               li.dropdown#last-child
                 a.dropdown-toggle data-toggle="dropdown" href="#"
                   | メニュー
@@ -52,6 +51,8 @@ html lang="en"
                   li#dropdown-menu= link_to "ブログ設定", "#"
                   li.divider
                   li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
+                  li.divider
+                  li#dropdown-menu= link_to "dev:blog_new", new_blog_path
             - else
               li#last-child= link_to "ログイン", user_session_path
     .row
