@@ -1,3 +1,60 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// index {{{
+.col-xs-6 {
+  float : center;
+  min-width : 330px;
+  max-width : 800px;
+}
+.panel#article {
+  margin-bottom : 5px;
+  .panel-heading#category {
+    padding       :  0px;
+    margin-bottom : -1px;
+    p {
+      font-size   : 23px;
+      padding: 0px;
+      margin: 0px;
+    }
+    li {
+      margin-left : 30px;
+      font-size   : 23px;
+    }
+  }
+  .panel-heading#blog {
+    font-size: 26px;
+    padding: 5px 5px 0px 5px;
+  }
+  .panel-body#article-title {
+    font-size: 10px;
+    h1 {
+      font-size: 17px;
+      margin-top: 5px;
+      margin-bottom: 3px;
+    }
+    h2 {
+      font-size: 14px;
+      margin-top: 5px;
+      margin-bottom: 3px;
+    }
+    h3 {
+      font-size: 11px;
+      margin-top: 5px;
+      margin-bottom: 3px;
+    }
+    h4 {
+      font-size: 9px;
+    }
+    h5 {
+      font-size: 8px;
+    }
+    h6 {
+      font-size: 7px;
+    }
+    ul {
+      margin-left: -15px;
+    }
+  }
+}
+// }}

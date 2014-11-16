@@ -1,11 +1,12 @@
 = render layout: 'leftbar' do
-.col-xs-8
+.col-xs-7
   p.h1
     | 最新の記事
   hr.default
     .panel.panel-success#article
       .panel-heading#category
-        li カテゴリー1
+        span.glyphicon.glyphicon-tag
+        p カテゴリー1
     table.table.table-bordered#article
       tbody
         - cnt = 0
