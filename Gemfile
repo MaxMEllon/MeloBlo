@@ -50,10 +50,10 @@ gem 'therubyracer'
 gem 'devise'
 
 # pry
-# gem 'pry'
-# gem 'pry-rails'
-# gem 'pry-doc'
-# gem 'pry-coolline'
+gem 'pry', '< 0.10.0'
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-coolline'
 
 # hirb
 gem 'hirb'
