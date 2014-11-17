@@ -37,7 +37,10 @@ html lang="en"
             li#child= link_to "ブログ一覧", ""
             - if user_signed_in?
               li#child= link_to "マイブログ", ""
-              li#child= link_to "記事作成", new_article_path
+              - if blog_created?(current_user.id)
+                li#child= link_to "記事作成", new_article_path
+              - else
+                li#child= link_to "ブログ作成", new_blog_path
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li#name= "ようこそ " + current_user.name + " さん"

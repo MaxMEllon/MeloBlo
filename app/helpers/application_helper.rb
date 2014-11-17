@@ -19,7 +19,7 @@ module ApplicationHelper
     markdown.render(text).html_safe
   end
 
-  def blog_created?
+  def blog_created?(user_id)
+    Blog.where(user_id: user_id).exists?
   end
-
 end
