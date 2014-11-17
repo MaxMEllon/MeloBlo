@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :cleate] # 閲覧制限
+
   def new
     @article = Article.new
+    @blog = Blog.new
   end
 
   def create
-    @article = Article.new(article_params)
+    @blog = Blog.first
+    @article = @blog.articles.create(article_params)
     if @article.save
       redirect_to blogs_path
     else
