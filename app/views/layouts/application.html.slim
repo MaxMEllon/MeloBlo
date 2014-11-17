@@ -57,7 +57,8 @@ html lang="en"
                   li#dropdown-menu= link_to "dev:new_blog", new_blog_path
                   li#dropdown-menu= link_to "dev:new_category", ""
             - else
-              li#last-child= link_to "ログイン", user_session_path
+              li#child= link_to "ログイン", user_session_path
+              li#last-child= link_to "新規登録", new_user_registration_path
     .row
       .container
         = bootstrap_flash
