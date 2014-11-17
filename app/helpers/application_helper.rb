@@ -18,4 +18,8 @@ module ApplicationHelper
     )
     markdown.render(text).html_safe
   end
+
+  def blog_created?
+  end
+
 end
