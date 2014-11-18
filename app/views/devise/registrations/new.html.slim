@@ -38,5 +38,6 @@
             = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
       .col-sm-3
       .col-sm-8
-        .actions
-          = f.submit "上記の内容で作成", class: 'btn btn-info'
+        .field#submit
+          .actions
+            = f.submit "上記の内容で作成", class: 'btn btn-info'
