@@ -38,9 +38,9 @@ html lang="en"
             - if user_signed_in?
               li#child= link_to "マイブログ", ""
               - if blog_created?(current_user.id)
-                li#child= link_to "記事作成", new_article_path
+                li#child= link_to "記事作成", ""
               - else
-                li#child= link_to "ブログ作成", new_blog_path
+                li#child= link_to "ブログ作成", ""
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li#name= "ようこそ " + current_user.name + " さん"
@@ -54,7 +54,7 @@ html lang="en"
                   li.divider
                   li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
                   li.divider
-                  li#dropdown-menu= link_to "dev:new_blog", new_blog_path
+                  li#dropdown-menu= link_to "dev:new_blog", ""
                   li#dropdown-menu= link_to "dev:new_category", ""
             - else
               li#child= link_to "ログイン", user_session_path

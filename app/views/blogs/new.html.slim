@@ -1,8 +1,5 @@
-= form_for @blog do |f|
+= form_for [@user, @user.blog.build] do |f|
   .form-group#new
     = f.label 'ブログタイトル'
     = f.text_field :title, class: 'form-control'
-  .form-group#new
-    /* hiddenフィールドの使用に問題あり */
-    = f.text_field :user_id, class: 'hidden form-control', value: current_user.id
   = f.submit '作成', class: 'btn btn-info'
