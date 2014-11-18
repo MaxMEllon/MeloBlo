@@ -5,6 +5,7 @@
     hr.default
   .col-sm-7
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
       .form-horizontal
         .form-group#name
           .col-sm-2
