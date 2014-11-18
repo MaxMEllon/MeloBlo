@@ -2,18 +2,18 @@ class CategoriesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :cleate, :destroy] # 閲覧制限
 
-  def new
-    @blog = Blog.new
-  end
-
   def index
     @categories = Category.all
   end
 
+  def new
+    @category = Category.new
+  end
+
   def create
-    @blog = Blog.new(blog_params)
-    if @blog.save
-      redirect_to blogs_path
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to root_path
     else
       render 'new'
     end

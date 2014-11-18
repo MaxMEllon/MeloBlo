@@ -21,73 +21,73 @@ html lang="en"
 
 
   body style="padding-top:50px;"
-    .navbar.navbar-static-top.navbar-fixed-top
-      .container
-        .navbar-header
-          button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-            span.icon-bar
-            span.icon-bar
-            - if user_signed_in?
+    div#wrap
+      .navbar.navbar-static-top.navbar-fixed-top
+        .container
+          .navbar-header
+            button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
               span.icon-bar
               span.icon-bar
-              span.icon-bar
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          ul.nav.navbar-nav
-            li#child= link_to "トップ", root_path
-            li#child= link_to "ブログ一覧", ""
-            - if user_signed_in?
-              - if blog_created?(current_user.id)
-                - blog = Blog.where(user_id: current_user.id).first
-                li#child= link_to "マイブログ", blog_path(blog.id)
-                li#child= link_to "記事作成", ""
+              - if user_signed_in?
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+          .navbar-collapse.collapse.navbar-responsive-collapse
+            ul.nav.navbar-nav
+              li#child= link_to "トップ", root_path
+              li#child= link_to "ブログ一覧", ""
+              - if user_signed_in?
+                - if blog_created?(current_user.id)
+                  - blog = Blog.where(user_id: current_user.id).first
+                  li#child= link_to "マイブログ", blog_path(blog.id)
+                  li#child= link_to "記事作成", ""
+                - else
+                  li#child= link_to "ブログ作成", new_user_blog_path(current_user.id)
+            ul.nav.navbar-nav.navbar-right
+              - if user_signed_in?
+                li#name= "ようこそ " + current_user.name + " さん"
+                li.dropdown#last-child
+                  a.dropdown-toggle data-toggle="dropdown" href="#"
+                    | メニュー
+                    span.caret
+                  ul.dropdown-menu role="menu"
+                    li#dropdown-menu= link_to "ユーザー設定", "#"
+                    li#dropdown-menu= link_to "ブログ設定", "#"
+                    li.divider
+                    li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
+                    li.divider
+                    li#dropdown-menu= link_to "dev:new_category", new_category_path
               - else
-                li#child= link_to "ブログ作成", new_user_blog_path(current_user.id)
-          ul.nav.navbar-nav.navbar-right
-            - if user_signed_in?
-              li#name= "ようこそ " + current_user.name + " さん"
-              li.dropdown#last-child
-                a.dropdown-toggle data-toggle="dropdown" href="#"
-                  | メニュー
-                  span.caret
-                ul.dropdown-menu role="menu"
-                  li#dropdown-menu= link_to "ユーザー設定", "#"
-                  li#dropdown-menu= link_to "ブログ設定", "#"
-                  li.divider
-                  li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
-                  li.divider
-                  li#dropdown-menu= link_to "dev:new_blog", ""
-                  li#dropdown-menu= link_to "dev:new_category", ""
-            - else
-              li#child= link_to "ログイン", user_session_path
-              li#last-child= link_to "新規登録", new_user_registration_path
-    .row
-      .container
-        = bootstrap_flash
-        - if notice
-          p.alert.alert-succsess
-            = notice
-        - if alert
-          p.alert.alert-succsess
-            = alert
-        = yield
-  .footer
-    .row
-      .div#innner
-        .col-md-3
-        .col-md-3
-          h4 hoge
-          = link_to "hogehoge", ""
-          = link_to "hogehoge", ""
-          = link_to "hogehoge", ""
-        .col-md-3
-          h4 hoge
-          = link_to "hogehoge", ""
-          = link_to "hogehoge", ""
-          = link_to "hogehoge", ""
-        .col-md-3
-          h4 hoge
-          = link_to "hogehoge", ""
-          = link_to "hogehoge", ""
-          = link_to "hogehoge", ""
-    .row
-      p#copy-write &copy; Company 2014
+                li#child= link_to "ログイン", user_session_path
+                li#last-child= link_to "新規登録", new_user_registration_path
+      .row
+        .container
+          = bootstrap_flash
+          - if notice
+            p.alert.alert-succsess
+              = notice
+          - if alert
+            p.alert.alert-succsess
+              = alert
+          = yield
+      .footer
+        .row
+          .div#innner
+            .col-md-3
+            .col-md-3
+              h4 hoge
+              = link_to "hogehoge", ""
+              = link_to "hogehoge", ""
+              = link_to "hogehoge", ""
+            .col-md-3
+              h4 hoge
+              = link_to "hogehoge", ""
+              = link_to "hogehoge", ""
+              = link_to "hogehoge", ""
+            .col-md-3
+              h4 hoge
+              = link_to "hogehoge", ""
+              = link_to "hogehoge", ""
+              = link_to "hogehoge", ""
+        .row
+          p#copy-write &copy; Company 2014

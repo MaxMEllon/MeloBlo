@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :blogs, only: [:new, :create, :edit, :destroy]
   end
   resources :blogs, only: [:show]
+  resources :categories, only: [:new, :create]
   get  '*not_found' => 'application#routing_error'
   post '*not_found' => 'application#routing_error'
 end
