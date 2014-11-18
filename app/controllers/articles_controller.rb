@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @blog = Blog.first
+    @blog = Blog.find(params[:blog_id])
     @article = @blog.articles.create(article_params)
     if @article.save
       redirect_to blogs_path
