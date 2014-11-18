@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :blogs, only: [:new, :create, :edit]
   end
+  get  '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
 end

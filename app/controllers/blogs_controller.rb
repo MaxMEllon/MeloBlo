@@ -9,12 +9,12 @@ class BlogsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @blog = @user.create_blog
+    @blog = @user.build_blog
   end
 
   def create
     @user = User.find(params[:user_id])
-    @blog = @user.create_blog(blog_params)
+    @blog = @user.build_blog(blog_params)
     if @blog.save
       redirect_to root_path
     else

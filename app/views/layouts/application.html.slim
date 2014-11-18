@@ -33,14 +33,14 @@ html lang="en"
               span.icon-bar
         .navbar-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
-            li#child= link_to "トップ", ""
+            li#child= link_to "トップ", root_path
             li#child= link_to "ブログ一覧", ""
             - if user_signed_in?
               li#child= link_to "マイブログ", ""
               - if blog_created?(current_user.id)
                 li#child= link_to "記事作成", ""
               - else
-                li#child= link_to "ブログ作成", ""
+                li#child= link_to "ブログ作成", new_user_blog_path(current_user.id)
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li#name= "ようこそ " + current_user.name + " さん"

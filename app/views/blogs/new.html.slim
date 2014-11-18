@@ -1,5 +1,9 @@
-= form_for [@user, @user.build_blog] do |f|
-  .form-group#new
-    = f.label 'ブログタイトル'
-    = f.text_field :title, class: 'form-control'
-  = f.submit '作成', class: 'btn btn-info'
+- if blog_owner?(@user.id, current_user.id)
+  = form_for [@user, @user.build_blog] do |f|
+    .form-group#new
+      = f.label 'ブログタイトル'
+      = f.text_field :title, class: 'form-control'
+    = f.submit '作成', class: 'btn btn-info'
+- else
+  p
+    | 不正なアクセスを検出しました
