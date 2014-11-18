@@ -36,9 +36,9 @@ html lang="en"
             li#child= link_to "トップ", root_path
             li#child= link_to "ブログ一覧", ""
             - if user_signed_in?
-              - blog = Blog.where(user_id: current_user.id).first
-              /* li#child= link_to "マイブログ", blog_path(blog.id) */
               - if blog_created?(current_user.id)
+                - blog = Blog.where(user_id: current_user.id).first
+                li#child= link_to "マイブログ", blog_path(blog.id)
                 li#child= link_to "記事作成", ""
               - else
                 li#child= link_to "ブログ作成", new_user_blog_path(current_user.id)
