@@ -156,10 +156,16 @@ hr.default {
 // }}}
 // }}}
 // footer {{{
+html,body {
+  height: 100%;
+}
+#wrap {
+}
 .footer {
   color: #666;
   float: left;
   clear: both;
+  bottom: 0px;
   background-color: #222;
   margin-top: 50px;
   padding-top: 20px;
@@ -168,6 +174,7 @@ hr.default {
   height: 100%;
   div#innner {
     text-align: center;
+    float: center;
     width: 700px;
     .col-md-3 {
       min-width: 80px;
@@ -212,6 +219,13 @@ hr.default {
   .col-sm-3 {
     label {
       padding-top: 9px;
+    }
+  }
+}
+.field#submit {
+  .actions {
+    .btn {
+      margin-bottom: 280px;
     }
   }
 }
