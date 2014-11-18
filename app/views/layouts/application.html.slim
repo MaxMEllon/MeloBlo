@@ -57,26 +57,33 @@ html lang="en"
                   li#dropdown-menu= link_to "dev:new_blog", new_blog_path
                   li#dropdown-menu= link_to "dev:new_category", ""
             - else
-              li#last-child= link_to "ログイン", user_session_path
+              li#child= link_to "ログイン", user_session_path
+              li#last-child= link_to "新規登録", new_user_registration_path
     .row
       .container
         = bootstrap_flash
+        - if notice
+          p.alert.alert-succsess
+            = notice
+        - if alert
+          p.alert.alert-succsess
+            = alert
         = yield
   .footer
     .row
       .div#innner
-        .col-xs-2
-        .col-xs-2
+        .col-md-3
+        .col-md-3
           h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
-        .col-xs-2
+        .col-md-3
           h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
-        .col-xs-2
+        .col-md-3
           h4 hoge
           = link_to "hogehoge", ""
           = link_to "hogehoge", ""
