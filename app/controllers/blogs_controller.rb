@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :cleate, :edit, :update, :destroy] # 閲覧制限
+  before_action :set_user, only: [:new, :create]
 
   def index
     @blogs = Blog.all
@@ -8,12 +9,10 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @blog = @user.build_blog
   end
 
   def create
-    @user = User.find(params[:user_id])
     @blog = @user.build_blog(blog_params)
     if @blog.save
       redirect_to root_path
@@ -36,7 +35,7 @@ class BlogsController < ApplicationController
       params[:blog].permit(:title)
     end
 
-    def set_blog
-      @blog = Blog.find(params[:id])
+    def set_user
+      @user = User.find(params[:user_id])
     end
 end
