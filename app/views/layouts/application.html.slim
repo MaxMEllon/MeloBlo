@@ -40,7 +40,7 @@ html lang="en"
                 - if blog_created?(current_user.id)
                   - blog = Blog.where(user_id: current_user.id).first
                   li#child= link_to "マイブログ", blog_path(blog.id)
-                  li#child= link_to "記事作成", ""
+                  li#child= link_to "記事作成", new_blog_article_path(blog.id)
                 - else
                   li#child= link_to "ブログ作成", new_user_blog_path(current_user.id)
             ul.nav.navbar-nav.navbar-right

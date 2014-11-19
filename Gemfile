@@ -68,6 +68,9 @@ gem 'redcarpet'
 # coderay
 gem 'coderay'
 
+# acts-as-taggable-on
+gem 'acts-as-taggable-on'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

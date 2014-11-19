@@ -10,6 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @blog = @user.build_blog
   end
 
@@ -33,7 +34,7 @@ class BlogsController < ApplicationController
 
   private
     def blog_params
-      params[:blog].permit(:title)
+      params[:blog].permit(:title, :category_ids => [] )
     end
 
     def set_user
