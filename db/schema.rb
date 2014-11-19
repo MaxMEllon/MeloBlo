@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116132458) do
+ActiveRecord::Schema.define(version: 20141119094053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "article_tags", force: true do |t|
-    t.integer  "article_id"
-    t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -54,12 +47,6 @@ ActiveRecord::Schema.define(version: 20141116132458) do
 
   create_table "options", force: true do |t|
     t.string "email"
-  end
-
-  create_table "tags", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
