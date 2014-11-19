@@ -1,0 +1,5 @@
+= form_for @tag do |f|
+  .form-group#new
+    = f.label 'tag名'
+    = f.text_field :name, class: 'form-control'
+  = f.submit '作成', class: 'btn btn-info'
