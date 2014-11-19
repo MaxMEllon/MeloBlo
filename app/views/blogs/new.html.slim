@@ -3,6 +3,11 @@
     .form-group#new
       = f.label 'ブログタイトル'
       = f.text_field :title, class: 'form-control'
+    - Category.all.each do |cat|
+      .form-group
+        li
+          = f.check_box :category_ids, { :checked => @blog.categories.include?(cat), :name => 'blog[category_ids][]'  }, cat.id, ''
+          = cat.name
     = f.submit '作成', class: 'btn btn-info'
 - else
   p
