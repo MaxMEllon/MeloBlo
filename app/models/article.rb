@@ -1,6 +1,5 @@
 class Article < ActiveRecord::Base
+  acts_as_taggable
   belongs_to :blog
-  has_many   :artcle_tags
-  has_many   :tags, through: :article_tags
   validates  :title, presence: true
 end
