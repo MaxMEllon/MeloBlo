@@ -10,10 +10,14 @@ class ArticlesController < ApplicationController
   def create
     @article = @blog.articles.create(article_params)
     if @article.save
-      redirect_to blogs_path
+      redirect_to root_path
     else
       render "new"
     end
+  end
+
+  def tag_cloud
+    @tags = Article.tags_on(:tags)
   end
 
   def edit
@@ -30,7 +34,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params[:article].permit(:title, :content, :tag_ids => [])
+      params[:article].permit(:title, :content, :tag_list)
     end
 
     def set_blog
