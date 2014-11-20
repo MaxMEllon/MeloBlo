@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params[:article].permit(:title, :content, :tag_list)
+      params[:article].permit(:title, :tag_list, :content)
     end
 
     def set_blog
