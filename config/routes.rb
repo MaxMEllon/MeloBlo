@@ -15,11 +15,11 @@ Rails.application.routes.draw do
   end
   # blog <---> articles
   resources :blogs, only: [:show] do
-    resources :articles, only: [:new, :create, :edeit, :destroy, :show]
+    resources :articles, only: [:new, :create, :destroy, :show]
   end
 
   # other
-  resources :articles,   only: [:index]
+  resources :articles,   only: [:index, :edit, :update]
   resources :tag,        only: [:new, :create]
   resources :categories, only: [:new, :create]
 

@@ -13,13 +13,19 @@
         .text-muted.panel-heading#user-data ユーザーデータ
       .panel-body
         | 投稿記事数 ：
+        = current_user.blog.articles.count
+    .panel.panel-default#frame
+      .panel.panel-danger
+        .text-muted.panel-heading#user-category カテゴリ一覧
+      .panel-body
+        - Category.all.each do |category|
+          li#tag=link_to category.name, ''
     .panel.panel-default#frame
       .panel.panel-warning
         .text-muted.panel-heading#user-tag ユーザータグ
       .panel-body
-        li#tag= link_to "タグ1", "#"
-        li#tag= link_to "タグ1", "#"
-        li#tag= link_to "タグ1", "#"
+        - Article.tags_on(:tags).each do |tag|
+          li#tag=link_to tag.name, ''
   - else
     .my-logo
       = image_tag 'Logo.png', size: '140x140', class: 'img-responsive img-thumbnail'
@@ -28,11 +34,11 @@
       = link_to "ログイン", new_user_session_path, class: "btn btn-warning btn-lg" , id: "sign-in"
     .panel.panel-default#frame
       .panel.panel-warning
-        .text-muted.panel-heading#user-tag ランダムタグ
+        .text-muted.panel-heading#user-tag カテゴリ一覧
       .panel-body
-        li#tag= link_to "タグ1", ""
-        li#tag= link_to "タグ1", "#"
-        li#tag= link_to "タグ1", "#"
+        li#tag= link_to "カテゴリ", ""
+        li#tag= link_to "カテゴリ", ""
+        li#tag= link_to "カテゴリ", ""
   a href="/" target="_blank"
     div#banner
       img src="http://yuzu-soft-works.sakura.ne.jp/home/img/amairo/amabana_160_720_a.jpg" art="ゆずソフト最新作天色＊アイルノーツ"
