@@ -1,4 +1,11 @@
 = render layout: 'leftbar' do
-.col-xs-7
+.col-md-9
   p.h1=@blog.title
   hr.default
+    / TODO:表示記事の個数の制限をつける
+    - @articles.each do |article|
+      .panel.panel-success#article
+        .panel-heading#category
+            p= link_to article.title, edit_article_path(article.id)
+        .panel-body
+          = markdown(article.content)

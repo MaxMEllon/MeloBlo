@@ -27,9 +27,12 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @articles = @blog.articles
   end
 
   def destroy
+    @blog.destroy
+    redirect_to root_path
   end
 
   private

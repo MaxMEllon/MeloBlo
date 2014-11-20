@@ -1,0 +1,12 @@
+= form_for @article do |f|
+  .form-group#new
+    = f.label '記事タイトル'
+    = f.text_field :title, class: 'form-control', value: @article.title
+  .form-group#new
+    = f.label 'タグ'
+    em = '    , (半角コンマ)で区切れば一度に複数のタグを付けれます'
+    = f.text_field :tag_list, class: 'form-control',value: @article.tag_list.to_s
+  .form-group#new
+    = f.label '記事内容'
+    = f.text_area :content, class: 'form-control', rows: '10', value: @article.content
+  = f.submit '作成', class: 'btn btn-info'
