@@ -23,7 +23,4 @@ module ApplicationHelper
     Blog.where(user_id: user_id).exists?
   end
 
-  def current_user_blog(user_id)
-    Blog.where(user_id: user_id)
-  end
 end
