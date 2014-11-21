@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :cleate, :destroy] # 閲覧制限
+  before_action :set_category, only: [:show]
 
   def index
     @categories = Category.all
@@ -26,6 +27,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @blogs = @category.blogs
   end
 
   def destroy

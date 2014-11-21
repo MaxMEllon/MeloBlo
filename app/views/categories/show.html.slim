@@ -1,0 +1,13 @@
+= render layout: 'leftbar' do
+.col-md-9
+  p.h1=@category.name
+  hr.default
+    / TODO:表示記事の個数の制限をつける
+    - @blogs.each do |blog|
+      .panel.panel-success#article
+        .panel-heading#category
+          p = link_to blog.title, blog_path(blog.id)
+        .panel-body
+          p
+           |  記事投稿数 ：
+           = blog.articles.count

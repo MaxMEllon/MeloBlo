@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   def create
     @article = @blog.articles.create(article_params)
     if @article.save
-      redirect_to blog_path(@blog.id)
+      redirect_to root_path
     else
       render "new"
     end
@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to root_path
+      redirect_to blog_path(@blog.id)
     else
       render 'edit'
     end
