@@ -35,7 +35,6 @@ html lang="en"
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               li#child= link_to "トップ", root_path
-              li#child= link_to "ブログ一覧", ""
               - if user_signed_in?
                 - if blog_created?(current_user.id)
                   - blog = Blog.where(user_id: current_user.id).first
@@ -52,11 +51,9 @@ html lang="en"
                     span.caret
                   ul.dropdown-menu role="menu"
                     li#dropdown-menu= link_to "ユーザー設定", "#"
-                    li#dropdown-menu= link_to "ブログ設定", "#"
+                    li#dropdown-menu= link_to "ブログ設定", ''
                     li.divider
                     li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
-                    li.divider
-                    li#dropdown-menu= link_to "dev:new_category", new_category_path
               - else
                 li#child= link_to "ログイン", user_session_path
                 li#last-child= link_to "新規登録", new_user_registration_path

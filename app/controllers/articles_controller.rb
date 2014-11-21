@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to blog_path(@blog.id)
+      redirect_to blog_path(@article.blog_id)
     else
       render 'edit'
     end

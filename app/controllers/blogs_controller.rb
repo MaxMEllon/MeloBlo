@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] # 閲覧制限
-  before_action :set_user, only: [:new, :create, :destroy, :edit]
+  before_action :set_user, only: [:new, :create, :destroy, :edit, :update]
   before_action :set_blog, only: [:show]
 
   def index
@@ -24,6 +24,15 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @blog = @user.blog
+  end
+
+  def update
+    if @blog.update(blog_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   def show

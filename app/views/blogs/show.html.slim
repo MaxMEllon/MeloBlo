@@ -7,7 +7,8 @@
     .panel.panel-success#article
       .panel-heading#category
         p = article.title
-        - if current_user.blog == article.blog
-          em#edit = link_to '[編集]', edit_article_path(article.id)
+        - if user_signed_in?
+          - if current_user.blog == article.blog
+            em#edit = link_to '[編集]', edit_article_path(article.id)
       .panel-body
         = markdown(article.content)
