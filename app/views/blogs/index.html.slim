@@ -3,18 +3,28 @@
   p.h1
     | 最新の記事
   hr.default
-    .panel.panel-success#article
-      .panel-heading#category
-        span.glyphicon.glyphicon-tag
-        / TODO:複数カテゴリーのブログの対処
-        p CategoryName
+    - Article.all.each do |article|
+      .panel.panel-success#article
+        .panel-heading#category
+            em = article.blog.user.name
+            | さんのブログ
+            p = article.blog.title
     table.table.table-bordered#article
       tbody
         - @articles.each do |article|
           .panel.panel-default#article
-            .panel-heading#blog
+            .panel-heading#article
               p.h4 = article.title
-            .panel-body#article-title
-              / isure: マークダウンの特殊な文字が表示される
-              = article.content[0, 100]
+              em#tag
+                | タグ :
+                - article.tag_list.each do |tag|
+                  = link_to tag, ''
+                  |  ,
+              em#date
+                = article.updated_at.to_s
+            .panel-body#content
+              = article.content[0, 20]
+              | ....
+              br
+              = link_to '続きを読む', ''
 = render layout: 'rightbar' do
