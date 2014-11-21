@@ -19,7 +19,7 @@
         .text-muted.panel-heading#user-category カテゴリ一覧
       .panel-body
         - Category.all.each do |category|
-          li#tag=link_to category.name, ''
+          li#tag=link_to category.name, category_path(category.id)
     .panel.panel-default#frame
       .panel.panel-warning
         .text-muted.panel-heading#user-tag ユーザータグ
@@ -33,12 +33,11 @@
       = link_to "新規登録", new_user_registration_path, class: "btn btn-primary btn-lg" , id: "sign-up"
       = link_to "ログイン", new_user_session_path, class: "btn btn-warning btn-lg" , id: "sign-in"
     .panel.panel-default#frame
-      .panel.panel-warning
-        .text-muted.panel-heading#user-tag カテゴリ一覧
+      .panel.panel-danger
+        .text-muted.panel-heading#user-category カテゴリ一覧
       .panel-body
-        li#tag= link_to "カテゴリ", ""
-        li#tag= link_to "カテゴリ", ""
-        li#tag= link_to "カテゴリ", ""
+        - Category.all.each do |category|
+          li#tag=link_to category.name, category_path(category.id)
   a href="/" target="_blank"
     div#banner
       img src="http://yuzu-soft-works.sakura.ne.jp/home/img/amairo/amabana_160_720_a.jpg" art="ゆずソフト最新作天色＊アイルノーツ"

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # other
   resources :articles,   only: [:index, :edit, :update]
   resources :tag,        only: [:new, :create]
-  resources :categories, only: [:new, :create]
+  resources :categories, only: [:new, :create, :show]
 
   # routing_error
   get  '*not_found' => 'application#routing_error'
