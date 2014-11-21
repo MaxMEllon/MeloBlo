@@ -6,6 +6,9 @@
   - @articles.each do |article|
     .panel.panel-success#article
       .panel-heading#category
-          p= link_to article.title, edit_article_path(article.id)
+        - if current_user.blog == article.blog
+          p = link_to article.title, edit_article_path(article.id)
+        - else
+          p = article.title
       .panel-body
         = markdown(article.content)

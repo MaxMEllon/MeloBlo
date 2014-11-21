@@ -9,9 +9,8 @@
             em = article.blog.user.name
             | さんのブログ
             p = article.blog.title
-    table.table.table-bordered#article
-      tbody
-        - @articles.each do |article|
+      table.table.table-bordered#article
+        tbody
           .panel.panel-default#article
             .panel-heading#article
               p.h4 = article.title
