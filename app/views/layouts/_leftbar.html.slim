@@ -24,8 +24,9 @@
       .panel.panel-warning
         .text-muted.panel-heading#user-tag ユーザータグ
       .panel-body
-        - Article.tags_on(:tags).each do |tag|
-          li#tag=link_to tag.name, ''
+        - tag_list(current_user.id).each do |tag|
+          - tag = tag.name + '(' + tag.taggings_count.to_s + ')'
+          li#tag=link_to tag, ''
   - else
     .my-logo
       = image_tag 'Logo.png', size: '140x140', class: 'img-responsive img-thumbnail'

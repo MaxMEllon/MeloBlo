@@ -23,4 +23,9 @@ module ApplicationHelper
     Blog.where(user_id: user_id).exists?
   end
 
+  def tag_list(user_id)
+    user_blog = User.where(id: user_id).first.blog
+    Article.where(blog_id: user_blog).tags_on(:tags).order('taggings_count DESC')
+  end
+
 end
