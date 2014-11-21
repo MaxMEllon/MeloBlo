@@ -24,39 +24,26 @@
       font-size   : 23px;
     }
   }
-  .panel-heading#blog {
+  .panel-heading#article {
     font-size: 26px;
     padding: 5px 5px 0px 5px;
+    p.h4 {
+      margin: 0px;
+    }
+    em#tag {
+      font-size: 10px;
+      margin: 0px;
+      padding: 0px;
+    }
+    em#date {
+      float: right;
+      font-size: 10px;
+      margin: 0px;
+      padding: 0px;
+    }
   }
-  .panel-body#article-title {
-    font-size: 10px;
-    h1 {
-      font-size: 17px;
-      margin-top: 5px;
-      margin-bottom: 3px;
-    }
-    h2 {
-      font-size: 14px;
-      margin-top: 5px;
-      margin-bottom: 3px;
-    }
-    h3 {
-      font-size: 11px;
-      margin-top: 5px;
-      margin-bottom: 3px;
-    }
-    h4 {
-      font-size: 9px;
-    }
-    h5 {
-      font-size: 8px;
-    }
-    h6 {
-      font-size: 7px;
-    }
-    ul {
-      margin-left: -15px;
-    }
+  .panel-body#content {
+    font-size: 12px;
   }
 }
 // }}
