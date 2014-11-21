@@ -18,13 +18,13 @@
       .panel.panel-danger
         .text-muted.panel-heading#user-category カテゴリ一覧
       .panel-body
-        - tag_list(current_user.id).each do |category|
+        - Category.all.each do |category|
           li#tag=link_to category.name, category_path(category.id)
     .panel.panel-default#frame
       .panel.panel-warning
         .text-muted.panel-heading#user-tag ユーザータグ
       .panel-body
-        - Article.tags_on(:tags).each do |tag|
+        - tag_list(current_user.id).each do |tag|
           - tag = tag.name + '(' + tag.taggings_count.to_s + ')'
           li#tag=link_to tag, ''
   - else
