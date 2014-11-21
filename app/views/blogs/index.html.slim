@@ -22,8 +22,7 @@
               em#date
                 = article.updated_at.to_s
             .panel-body#content
-              = article.content[0, 20]
-              | ....
+              = cut_off(article.content)
               br
-              = link_to '続きを読む', ''
+              = link_to '続きを読む', blog_path(article.blog_id)
 = render layout: 'rightbar' do
