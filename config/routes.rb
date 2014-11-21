@@ -11,16 +11,16 @@ Rails.application.routes.draw do
 
   # user <---> blog
   resources :users, only: [] do
-    resources :blogs, only: [:new, :create, :destroy]
+    resources :blogs, only: [:new, :create, :destroy, :edit, :update]
   end
   # blog <---> articles
   resources :blogs, only: [:show] do
-    resources :articles, only: [:new, :create, :destroy, :show]
+    resources :articles, only: [:new, :create, :show]
   end
 
   # other
-  resources :blog,       only: [:edit, :update]
-  resources :articles,   only: [:index, :edit, :update]
+  resources :blog,       only: [:update]
+  resources :articles,   only: [:index, :edit, :update, :destroy]
   resources :categories, only: [:new, :create, :show]
 
   # routing_error
