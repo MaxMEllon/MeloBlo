@@ -51,7 +51,8 @@ html lang="en"
                     span.caret
                   ul.dropdown-menu role="menu"
                     li#dropdown-menu= link_to "ユーザー設定", "#"
-                    li#dropdown-menu= link_to "ブログ設定", ''
+                    - blog = Blog.where(user_id: current_user.id).first
+                    li#dropdown-menu= link_to "ブログ設定", edit_user_blog_path(current_user.id, blog.id)
                     li.divider
                     li#dropdown-menu= link_to "ログアウト", destroy_user_session_path, method: :delete
               - else
