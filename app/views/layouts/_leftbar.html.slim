@@ -13,7 +13,8 @@
         .text-muted.panel-heading#user-data ユーザーデータ
       .panel-body
         | 投稿記事数 ：
-        = current_user.blog.articles.count
+        - unless current_user.blog == nil
+          = current_user.blog.articles.count
     .panel.panel-default#frame
       .panel.panel-danger
         .text-muted.panel-heading#user-category カテゴリ一覧

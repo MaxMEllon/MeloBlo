@@ -31,6 +31,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
+    @blog.articles.destroy_all
     @blog.destroy
     redirect_to root_path
   end
