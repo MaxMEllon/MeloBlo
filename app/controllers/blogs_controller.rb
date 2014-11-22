@@ -5,8 +5,6 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show]
 
   def index
-    @blogs = Blog.all
-    @articles = Article.all
   end
 
   def new
