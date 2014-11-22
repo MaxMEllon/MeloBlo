@@ -1,0 +1,11 @@
+= render layout: 'leftbar' do
+.col-md-9
+  p.h1=@article.title
+  em#date = @article.updated_at
+  br
+  - if user_signed_in?
+    - if current_user.blog == @article.blog
+      em#tag = link_to '編集', edit_article_path(@article.id), class: 'label label-info'
+      em#tag = link_to '削除', article_path(@article.id), method: :delete, class: 'label label-danger'
+  hr.default
+  = markdown(@article.content)

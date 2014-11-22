@@ -1,14 +1,19 @@
+p.h2
+  | ブログ編集
+hr
 - if blog_owner?(@user.id, current_user.id)
   = form_for @blog do |f|
     .form-group#new
       = f.label 'ブログタイトル'
       = f.text_field :title, class: 'form-control', value: @blog.title
-    table
-      tbody
-        - Category.all.each do |cat|
-          tr
-            td = f.check_box :category_ids, { :checked => @blog.categories.include?(cat), :name => 'blog[category_ids][]'  }, cat.id, ''
-            td = cat.name
+    .form-group
+      = f.label 'カテゴリ'
+      table
+        tbody
+          - Category.all.each do |cat|
+            tr
+              td = f.check_box :category_ids, { :checked => @blog.categories.include?(cat), :name => 'blog[category_ids][]'  }, cat.id, ''
+              td = cat.name
     = f.submit '編集', class: 'btn btn-info'
     hr
     .form-group
