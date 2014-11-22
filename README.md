@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/MaxMEllon/MeloBlo/badges/gpa.svg)](https://codeclimate.com/github/MaxMEllon/MeloBlo)
+
 # README
 
 - rails練習用blog
