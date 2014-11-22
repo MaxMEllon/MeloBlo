@@ -12,7 +12,7 @@ module MeloBlo
     config.i18n.default_locale = :ja
     config.generators.template_engine = :slim
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    config.time_zone 'Tokyo'
+    # config.time_zone 'Tokyo'
     config.active_record.default_timezone :local
   end
 end
