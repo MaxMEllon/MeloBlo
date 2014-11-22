@@ -3,12 +3,12 @@
   p.h1
     | 最新の記事
   hr.default
-    - Article.all.each do |article|
+    - Article.reorder(:updated_at).reverce_each do |article|
       .panel.panel-success#article
         .panel-heading#category
-            em = article.blog.user.name
-            | さんのブログ
-            p = article.blog.title
+          em = article.blog.user.name
+          | さんのブログ
+          p = article.blog.title
       table.table.table-bordered#article
         tbody
           .panel.panel-default#article
