@@ -29,6 +29,32 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+group :development do
+  # pry
+  gem 'pry', '< 0.10.0'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-coolline'
+  # hirb
+  gem 'hirb'
+  gem 'hirb-unicode'
+  # rspec
+  gem 'rspec'
+  gem 'rspec-rails'
+  # capybara
+  gem 'capybara'
+  gem 'capybara-webkit'
+  # machanize
+  gem 'mechanize'
+  # nokogiri
+  gem 'nokogiri'
+  # better_errors
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # 自分のローカル環境の都合上追加
+  gem 'bigdecimal'
+end
+
 # slim
 gem 'slim-rails'
 
@@ -49,16 +75,6 @@ gem 'therubyracer'
 # devise
 gem 'devise'
 
-# pry
-gem 'pry', '< 0.10.0'
-gem 'pry-rails'
-gem 'pry-doc'
-gem 'pry-coolline'
-
-# hirb
-gem 'hirb'
-gem 'hirb-unicode'
-
 # jquery-datatables-rails
 gem 'jquery-datatables-rails'
 
@@ -70,12 +86,6 @@ gem 'coderay'
 
 # acts-as-taggable-on
 gem 'acts-as-taggable-on'
-
-gem 'bigdecimal'
-
-# rspec
-gem 'rspec'
-gem 'rspec-rails'
 
 # codeclimate
 gem 'codeclimate-test-reporter', group: :test, require: nil
