@@ -23,6 +23,21 @@
       margin-left : 30px;
       font-size   : 23px;
     }
+    em#tag {
+      font-size: 15px;
+      margin: 0px;
+      padding: 0px;
+    }
+    a.label {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    em#date {
+      float: right;
+      font-size: 10px;
+      margin: 0px;
+      padding: 0px;
+    }
   }
   .panel-heading#article {
     font-size: 26px;

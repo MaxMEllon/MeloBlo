@@ -3,13 +3,19 @@
     .form-group#new
       = f.label 'ブログタイトル'
       = f.text_field :title, class: 'form-control', value: @blog.title
-    - Category.all.each do |cat|
-      .form-group
-        li
-          = f.check_box :category_ids, { :checked => @blog.categories.include?(cat), :name => 'blog[category_ids][]'  }, cat.id, ''
-          = cat.name
+    table
+      tbody
+        - Category.all.each do |cat|
+          tr
+            td = f.check_box :category_ids, { :checked => @blog.categories.include?(cat), :name => 'blog[category_ids][]'  }, cat.id, ''
+            td = cat.name
     = f.submit '編集', class: 'btn btn-info'
-    = link_to '削除', user_blog_path(current_user.id, @blog.id), method: :delete, class: 'btn btn-danger'
+    hr
+    .form-group
+      p.h4
+        | ブログ削除はこちら
+        br
+        = link_to '削除', user_blog_path(current_user.id, @blog.id), method: :delete, class: 'btn btn-danger'
 - else
   p
     | 不正なアクセスを検出しました

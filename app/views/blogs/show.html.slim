@@ -3,7 +3,7 @@
   p.h1=@blog.title
   hr.default
   / TODO:表示記事の個数の制限をつける
-  - @articles.each do |article|
+  - @articles.order(:updated_at).reverse_each do |article|
     .panel.panel-success#article
       .panel-heading#category
         p = article.title
@@ -11,5 +11,6 @@
           - if current_user.blog == article.blog
             em#tag = link_to '編集', edit_article_path(article.id), class: 'label label-info'
             em#tag = link_to '削除', article_path(article.id), method: :delete, class: 'label label-danger'
+        em#date = article.updated_at
       .panel-body
         = markdown(article.content)

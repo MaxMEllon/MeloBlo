@@ -12,5 +12,7 @@ module MeloBlo
     config.i18n.default_locale = :ja
     config.generators.template_engine = :slim
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    config.active_record.default_timzsoze 'Tokyo'
+    config.active_record.default_timzsoze :local
   end
 end
