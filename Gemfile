@@ -73,6 +73,10 @@ gem 'acts-as-taggable-on'
 
 gem 'bigdecimal'
 
+# rspec
+gem 'rspec'
+gem 'rspec-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
