@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :cleate] # 閲覧制限
   before_action :set_blog, only: [:new, :create]
-  before_action :set_article, only: [:edit, :destroy, :update, :edit]
+  before_action :set_article, only: [:edit, :destroy, :update, :edit, :show]
 
   def new
     @article = @blog.articles.new

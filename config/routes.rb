@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # other
   resources :blog,       only: [:update]
-  resources :articles,   only: [:index, :edit, :update, :destroy]
+  resources :articles,   only: [:index, :edit, :update, :destroy, :show]
   resources :categories, only: [:new, :create, :show]
 
   # routing_error
