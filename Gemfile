@@ -77,6 +77,9 @@ gem 'bigdecimal'
 gem 'rspec'
 gem 'rspec-rails'
 
+# codeclimate
+gem 'codeclimate-test-reporter', group: :test, require: nil
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
