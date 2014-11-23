@@ -21,9 +21,9 @@ html lang="en"
 
 
   body style="padding-top:50px;"
-    div#wrap
-      .navbar.navbar-static-top.navbar-fixed-top
-        .container
+    .container-fluid#wrap
+      .row
+        .navbar.navbar-static-top.navbar-fixed-top
           .navbar-header
             button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
               span.icon-bar
@@ -58,8 +58,8 @@ html lang="en"
               - else
                 li#child= link_to "ログイン", user_session_path
                 li#last-child= link_to "新規登録", new_user_registration_path
-      .row
-        .container
+      .container-fluid
+        .row
           = bootstrap_flash
           - if notice
             p.alert.alert-succsess
