@@ -14,5 +14,6 @@ module MeloBlo
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     # config.time_zone 'Tokyo'
     config.active_record.default_timezone :local
+    config.log_tags = [:remote_ip]
   end
 end
