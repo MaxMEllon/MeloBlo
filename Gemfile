@@ -87,6 +87,9 @@ gem 'coderay'
 # acts-as-taggable-on
 gem 'acts-as-taggable-on'
 
+# kaminari
+gem 'kaminari'
+
 # codeclimate
 gem 'codeclimate-test-reporter', group: :test, require: nil
 
