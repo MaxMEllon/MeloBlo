@@ -2,7 +2,6 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/MaxMEllon/MeloBlo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # README
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/MaxMEllon/MeloBlo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 - rails練習用blog
 
