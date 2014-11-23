@@ -13,6 +13,7 @@
             em#tag = link_to '削除', article_path(article.id), method: :delete, class: 'label label-danger'
         em#date = article.updated_at
       .panel-body
-        = markdown(article.content[0, 50]) + '....'
+        = article.content[0, 50] + '....'
         br
         = link_to '続きを読む', article_path(article.id)
+  = paginate(@articles)

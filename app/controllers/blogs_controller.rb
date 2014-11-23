@@ -34,7 +34,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @articles = @blog.articles
+    @articles = @blog.articles.page(params[:page]).per(5)
   end
 
   def destroy

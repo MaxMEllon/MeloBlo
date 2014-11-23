@@ -1,4 +1,4 @@
-div#leftbar
+.col-xs-2#leftbar
   - if user_signed_in?
     .panel.panel-default#frame
       .panel
@@ -29,7 +29,7 @@ div#leftbar
           - tag = tag.name + '(' + tag.taggings_count.to_s + ')'
           li#tag=link_to tag, ''
   - else
-    .my-logo
+    /* .my-logo */
       = image_tag 'Logo.png', size: '140x140', class: 'img-responsive img-thumbnail'
     .center
       = link_to "新規登録", new_user_registration_path, class: "btn btn-primary btn-lg" , id: "sign-up"
