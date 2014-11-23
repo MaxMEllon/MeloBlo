@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/MaxMEllon/MeloBlo/badges/gpa.svg)](https://codeclimate.com/github/MaxMEllon/MeloBlo)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/MaxMEllon/MeloBlo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # README
 
