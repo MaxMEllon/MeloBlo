@@ -25,7 +25,7 @@ RSpec.describe User, :type => :model do
       before do
         @user = User.new
         @user.name = ""
-        @user.email = "stt.com"
+        @user.email = ""
         @user.password = "est"
         @user.save
       end
@@ -34,10 +34,10 @@ RSpec.describe User, :type => :model do
       end
 
       it "メールアドレスが空の時作成に失敗しているか" do
+        expect(@user.errors[:email].size).to eq 1
       end
 
       it "メールアドレスが正しくないフォーマットの時に失敗しているか" do
-        expect(@user.errors[:email].size).to eq 1
       end
 
       it "パスワードが短い時失敗しているか" do
