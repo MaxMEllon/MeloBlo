@@ -41,6 +41,8 @@ group :development do
   # rspec
   gem 'rspec'
   gem 'rspec-rails'
+  # factory_girl
+  gem 'factory_girl_rails'
   # capybara
   gem 'capybara'
   gem 'capybara-webkit'
