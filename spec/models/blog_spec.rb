@@ -31,5 +31,17 @@ RSpec.describe Blog, :type => :model do
       end
     end
 
+    context "モデルの関連確認テスト" do
+      it "ブログが記事をもっているか" do
+        is_expected.to have_many(:articles)
+      end
+      it "ブログが記事に所属しているかどうか" do
+        is_expected.to belong_to(:user)
+      end
+      it "ブログがブログカテゴリを通してカテゴリを持っているか" do
+        is_expected.to have_many(:categories).through(:blog_categories)
+      end
+    end
+
   end
 end

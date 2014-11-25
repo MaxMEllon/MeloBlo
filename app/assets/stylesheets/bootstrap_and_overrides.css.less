@@ -88,7 +88,10 @@ hr.default {
 // sidebar {{{
 .col-xs-2#leftbar {
   float : left;
-  min-width: 180px;
+  width: 180px;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 5px;
   .my-logo {
     text-align: center;
     margin-bottom: 10px;
@@ -110,7 +113,6 @@ hr.default {
     text-align: center;
     float: center;
     .btn#sign-up {
-      margin-top: 20px;
       min-width: 140px;
       text-align: center;
     }
@@ -119,6 +121,14 @@ hr.default {
       margin-bottom: 10px;
       min-width: 140px;
       text-align: center;
+    }
+  }
+}
+.col-md-10 {
+  min-width: 1000px;
+  table {
+    td#rank {
+      width: 50px;
     }
   }
 }
@@ -159,10 +169,14 @@ hr.default {
 }
 // }}}
 // }}}
-// footer {{{
 html,body {
   height: 100%;
 }
+.container-fluid {
+  max-width: none !important;
+  width: auto;
+}
+// footer {{{
 #wrap {
 }
 .footer {
