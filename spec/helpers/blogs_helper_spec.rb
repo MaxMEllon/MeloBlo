@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'spec_helper'
+include Warden::Test::Helpers
 
 # Specs in this file have access to a helper object that includes
 # the BlogsHelper. For example:

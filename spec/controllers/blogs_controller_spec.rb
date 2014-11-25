@@ -16,7 +16,7 @@ RSpec.describe BlogsController, :type => :controller do
     context "blogを作成するテスト" do
       it "create a blog" do
         visit new_user_blog_path(@user.id)
-        fill_in "ブログタイトル", with: "hoge"
+        fill_in "title", with: "hoge"
         click_button "作成"
         page.should have_content("hoge")
       end
