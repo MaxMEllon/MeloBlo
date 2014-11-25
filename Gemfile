@@ -43,6 +43,8 @@ group :development do
   gem 'rspec-rails'
   # factory_girl
   gem 'factory_girl_rails'
+  # shoulda-matchers
+  gem 'shoulda-matchers'
   # capybara
   gem 'capybara'
   gem 'capybara-webkit'
