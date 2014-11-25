@@ -28,10 +28,4 @@ module ApplicationHelper
     Article.where(blog_id: user_blog).tags_on(:tags).order('taggings_count DESC')
   end
 
-  def cut_off(text)
-    return text if text == nil
-    return text if text.length < 20
-    text[0, 20] + '.....'
-  end
-
 end
