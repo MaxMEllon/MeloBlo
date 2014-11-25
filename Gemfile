@@ -53,6 +53,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   # shoulda-matchers
   gem 'shoulda-matchers'
+  # database_cleaner
+  gem 'database_cleaner'
   # capybara
   gem 'capybara'
   gem 'capybara-webkit'
