@@ -4,6 +4,7 @@ require "codeclimate-test-reporter"
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'shoulda-matchers'
+require 'factory_girl_rails'
 CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
