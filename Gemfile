@@ -38,6 +38,14 @@ group :development do
   # hirb
   gem 'hirb'
   gem 'hirb-unicode'
+  # better_errors
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # 自分のローカル環境の都合上追加
+  gem 'bigdecimal'
+end
+
+group :development, :test do
   # rspec
   gem 'rspec'
   gem 'rspec-rails'
@@ -50,13 +58,10 @@ group :development do
   gem 'capybara-webkit'
   # machanize
   gem 'mechanize'
+  # codeclimate
+  gem 'codeclimate-test-reporter', require: nil
   # nokogiri
   gem 'nokogiri'
-  # better_errors
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  # 自分のローカル環境の都合上追加
-  gem 'bigdecimal'
 end
 
 # slim
@@ -93,9 +98,6 @@ gem 'acts-as-taggable-on'
 
 # kaminari
 gem 'kaminari'
-
-# codeclimate
-gem 'codeclimate-test-reporter', group: :test, require: nil
 
 # Use unicorn as the app server
 # gem 'unicorn'
