@@ -25,5 +25,12 @@ RSpec.describe Category, :type => :model do
         expect(category.errors[:name].size).to eq 1
       end
     end
+
+    context "カテゴリモデルの関連確認テスト" do
+      it "ブログがブログカテゴリを通してカテゴリを持っているか" do
+        is_expected.to have_many(:blogs).through(:blog_categories)
+      end
+    end
+
   end
 end

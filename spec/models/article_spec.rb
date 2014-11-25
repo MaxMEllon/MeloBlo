@@ -38,5 +38,12 @@ RSpec.describe Article, :type => :model do
         expect(article.errors[:title].size).to eq 1
       end
     end
+
+    context "記事のモデル関連テスト" do
+      it "記事がブログに所属しているか" do
+        is_expected.to belong_to(:blog)
+      end
+    end
+
   end
 end
